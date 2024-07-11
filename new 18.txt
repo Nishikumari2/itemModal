@@ -1,0 +1,42 @@
+
+package com.insilicoss.row.dataRow;
+
+import com.insilicoss.util.excel.ExcelField;
+import com.insilicoss.util.excel.ExcelRowData;
+import java.time.LocalDate;
+
+
+public class ItemNtyMpngDataRow implements ExcelRowData{
+ 
+  public final static class ItemNtyMpngInputXcelLables {
+    
+    public static final String ENTITY_ID                    = "Entity Id";
+    public static final String ITEM_ID                      = "Item Id";
+    public static final String ITEM_ENTITY_DATE_EFCTV_FROM  = "From (dd-MM-yyyy)";
+    public static final String ITEM_ENTITY_DATE_EFCTV_TO    = "To (dd-MM-yyyy)";
+    public static final String UPDATE_STATUS_LABLE          = "Update Status";
+    public static final String UPDATE_REMARKS_LABLE         = "Update Remarks";
+  }
+  
+  @ExcelField(name = ItemNtyMpngDataRow.ItemNtyMpngInputXcelLables.ENTITY_ID, optionalColumn = false, defaultValue = "")
+  public String svsBizNtyIdy; 
+  
+  @ExcelField(name = ItemNtyMpngDataRow.ItemNtyMpngInputXcelLables.ITEM_ID, optionalColumn = false, defaultValue = "")
+  public String svsItemIdy; 
+   
+  @ExcelField(name = ItemNtyMpngDataRow.ItemNtyMpngInputXcelLables.ITEM_ENTITY_DATE_EFCTV_FROM, optionalColumn = false, defaultValue = "")
+  public LocalDate svdBizNtyItemAcessFrom; 
+  
+  @ExcelField(name = ItemNtyMpngDataRow.ItemNtyMpngInputXcelLables.ITEM_ENTITY_DATE_EFCTV_TO, optionalColumn = true, defaultValue = "12-Dec-2078")
+  public LocalDate svdBizNtyItemAcessTo; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.UPDATE_STATUS_LABLE, optionalColumn = true, defaultValue = "")
+  public String svsUpdateSts;
+
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.UPDATE_REMARKS_LABLE, optionalColumn = true, defaultValue = "")
+  public String svsRemarks;
+  
+  //public String toString(){
+ //   return "ItemDataRow{Id='" + svsBizNtyIdy + "',Reversed Id =' " + svsItemIdyRvsed + "',Effective From Date = " + svdBizNtyItemAcessFrom + ",Effective To Date='" + svdBizNtyItemAcessTo + "', Update =' " + svsUpdateSts + "',Status = " + svsRemarks + "}"; 
+  //}
+}
