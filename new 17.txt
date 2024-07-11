@@ -1,0 +1,95 @@
+
+package com.insilicoss.row.dataRow;
+
+import com.insilicoss.util.excel.ExcelField;
+import com.insilicoss.util.excel.ExcelRowData;
+import java.time.LocalDate;
+
+
+public class ItemDataRow implements ExcelRowData {
+  
+  public final static class ItemInputXcelLables {
+    public static final String Operation_I_U                = "Operation (I/U)";
+    public static final String ITEM_ID                      = "Id";
+    public static final String ITEM_DESC                    = "Item Description"; 
+    public static final String ITEM_UOM                     = "Unit Of Measurement";
+    public static final String ITEM_DATE_EFCTV_FROM         = "From (dd-MM-yyyy)";
+    public static final String ITEM_DATE_EFCTV_TO           = "To (dd-MM-yyyy)";
+    public static final String SELL_ITEM                    = "Can Sell? (Y/N) ";
+    public static final String PURCHASE_ITEM                = "Can Purchase? (Y/N) ";
+    public static final String INPUT_TAX_CREDIT_APPLICABLE  = "Input Tax Credit Applicable (Y/N)";
+    public static final String ITEM_HSN_SAC                 = "Item Hsn Sac";
+    public static final String ASSET_ITEM                   = "Asset Item? (Y/N)";
+    public static final String ASSET_BOOK_NATUR             = "Asset Book Natur";
+    public static final String TAX_CATEGORY                 = "Tax Category";
+    public static final String ACT_CATEGORY                 = "Act Category";
+    public static final String INVENTORY_ITEM               = "Inventory Item? (Y/N)";
+    public static final String EXPENSES_ITEM                = "Expenses Item? (Y/N)"; 
+    public static final String UPDATE_STATUS_LABLE          = "Update Status";
+    public static final String UPDATE_REMARKS_LABLE         = "Update Remarks";
+  }
+ 
+  public String svsItemIdy;
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.Operation_I_U, optionalColumn = false, defaultValue = "")
+  public String svsItemOperation; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ITEM_ID, optionalColumn = false, defaultValue = "")
+  public String svsItemIdyDesc; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ITEM_DESC, optionalColumn = false, defaultValue = "")
+  public String svsItemDesc; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ITEM_UOM, optionalColumn = false, defaultValue = "")
+  public String svsItemUomDesc; 
+   
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ITEM_DATE_EFCTV_FROM, optionalColumn = false, defaultValue = "")
+  public LocalDate svdItemDateEfctvFrom; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ITEM_DATE_EFCTV_TO, optionalColumn = true, defaultValue = "12-Dec-2078")
+  public LocalDate svdItemDateEfctvTo; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.SELL_ITEM, optionalColumn = true, defaultValue = "0")
+  public String svbIsSellItem; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.PURCHASE_ITEM, optionalColumn = true, defaultValue = "0")
+  public String svbIsPchsItem; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.INPUT_TAX_CREDIT_APPLICABLE, optionalColumn = true, defaultValue = "0")
+  public String svbIsItcAplcbl; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ITEM_HSN_SAC, optionalColumn = false, defaultValue = "")
+  public String svsItemHsnSac; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ASSET_ITEM, optionalColumn = true, defaultValue = "0")
+  public String svbIsAsetItem; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ASSET_BOOK_NATUR, optionalColumn = false, defaultValue = "")
+  public String svsAsetBookNaturDesc; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.TAX_CATEGORY, optionalColumn = true, defaultValue = "0")
+  public String svsAsetTaxCtgryId; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.ACT_CATEGORY, optionalColumn = true, defaultValue = "0")
+  public String svsAsetActCtgryId; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.INVENTORY_ITEM, optionalColumn = true, defaultValue = "0")
+  public String svbIsInvItem; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.EXPENSES_ITEM, optionalColumn = true, defaultValue = "0")
+  public String svbIsXpnsItem; 
+  
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.UPDATE_STATUS_LABLE, optionalColumn = true, defaultValue = "")
+  public String svsUpdateSts;
+
+  @ExcelField(name = ItemDataRow.ItemInputXcelLables.UPDATE_REMARKS_LABLE, optionalColumn = true, defaultValue = "")
+  public String svsRemarks; 
+  
+  /*public String toString(){
+    return "ItemDataRow{Id='" + svsItemIdyDesc + "',Item Desc =' " + svsItemDesc + "',UOM Desc = '" + svsItemUomDesc + "',Effective From Date = " + svdItemDateEfctvFrom + ",Effective To Date = " + svdItemDateEfctvTo + ",Effective To Date = " + svbIsSellItem + ", Update = ' " + svsUpdateSts + "',Status = " + svsRemarks + "}"; 
+  } */ 
+  
+  public String toString(){
+    return svsItemOperation+""+svsItemIdyDesc+""+svsItemDesc+""+svsItemUomDesc+""+svdItemDateEfctvFrom+""+svdItemDateEfctvTo+""+svbIsSellItem+""+svbIsPchsItem+""+svbIsItcAplcbl+""+svsItemHsnSac+""+svbIsAsetItem+""+svsAsetBookNaturDesc+""+svsAsetTaxCtgryId+""+svsAsetActCtgryId+""+svbIsInvItem+""+svbIsXpnsItem+""+svsUpdateSts+""+svsRemarks;
+  }
+}
